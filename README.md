@@ -15,3 +15,9 @@ This repository contains a machine learning model designed to predict the outcom
 * Python, Jupyter Notebook
 * Pandas, NumPy, Scikit-learn
 
+
+**Future Enhancements:**
+
+* Incorporate real-time data feeds for more accurate predictions.
+* Implement more sophisticated feature engineering techniques.
+* Explore advanced deep learning models for improved performance.
