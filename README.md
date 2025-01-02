@@ -4,6 +4,8 @@
 
 This repository contains a machine learning model designed to predict the outcome of Premier League soccer matches. Utilizing historical data, the model analyzes various factors such as team performance, player statistics, and match conditions to forecast the most likely result.
 
+**[SoccerEdge AI](https://socceredge-aigit-g8hpufpivydaypdghquz8r.streamlit.app/)**
+
 **Key Features:**
 
 * **Data-Driven:** Leverages a comprehensive dataset of past Premier League soccer matches, including detailed statistics and match events.
