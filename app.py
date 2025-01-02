@@ -76,6 +76,7 @@ def create_model():
     )
     return xgb
 
+@st.cache
 def calculate_elo(matches):
     # Initialize Elo ratings
     elo_dict = {}
@@ -120,7 +121,7 @@ def calculate_elo(matches):
         elo_dict[opponent] = opp_new_elo
     
     return matches
-
+@st.cache
 def add_form_features(matches):
     def convert_result_to_points(result):
         points = {'W': 3, 'D': 1, 'L': 0}
@@ -157,6 +158,7 @@ def add_form_features(matches):
     matches = matches.drop('result_points', axis=1)
     return matches
 
+@st.cache
 def preprocess_data(matches):
     matches["venue_code"] = matches["venue"].astype("category").cat.codes
     matches["opp_code"] = matches["opponent"].astype("category").cat.codes
@@ -194,6 +196,7 @@ def preprocess_data(matches):
     
     return matches
 
+@st.cache
 def get_team_stats(team, matches_rolling):
     team_matches = matches_rolling[matches_rolling["team"] == team].copy()
     if team_matches.empty:
@@ -201,6 +204,7 @@ def get_team_stats(team, matches_rolling):
         return None
     return team_matches.sort_values("date").iloc[-1]
 
+@st.cache
 def make_prediction(home_team, away_team, match_date, match_time, matches, matches_rolling, xgb_model, all_predictors, scaler, imputer):
     try:
         home_stats = get_team_stats(home_team, matches_rolling)
