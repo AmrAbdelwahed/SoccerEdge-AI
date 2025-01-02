@@ -72,7 +72,9 @@ def create_model():
         objective='multi:softprob',
         num_class=3,
         random_state=42,
-        scale_pos_weight=[1, 1, 0.001]
+        tree_method='hist',
+        early_stopping_rounds=50,
+        eval_metric=['mlogloss', 'merror'],
     )
     return xgb
 
